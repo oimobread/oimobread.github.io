@@ -126,12 +126,16 @@ setInterval(
     , random_life)
 
 function clear() {
-    let grd = canvas.createRadialGradient(tela.width / 2, tela.height / 2, 0, tela.width / 2, tela.height / 2, tela.width);
+    canvas.beginPath();
+    //グラデーション領域
+    // let grd = canvas.createRadialGradient(tela.width / 2, tela.height / 2, 0, tela.width / 2, tela.height / 2, tela.width);
+    let grd = canvas.createRadialGradient(tela.width / 2, tela.height / 2, 0, tela.width / 2, tela.height / 2, tela.width, 1);
     grd.addColorStop(0, "rgba(82,42,114,1)");
     grd.addColorStop(1, "rgba(26,14,4,0)");
     // Fill with gradient
     canvas.globalAlpha = 0.16;
     canvas.fillStyle = grd;
+    // console.log(tela.width, tela.height);
     canvas.fillRect(0, 0, tela.width, tela.height);
 }
 
